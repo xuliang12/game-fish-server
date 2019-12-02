@@ -2,6 +2,7 @@ package com.jzy.game.gate;
 
 import java.io.File;
 
+import com.jzy.game.engine.util.ProjectNameMapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.jzy.game.engine.redis.jedis.JedisClusterConfig;
@@ -14,84 +15,92 @@ import com.jzy.game.model.redis.key.GateKey;
 import com.jzy.game.model.redis.key.HallKey;
 
 /**
-                   _oo0oo_
-                  o8888888o
-                  88" . "88
-                  (| -_- |)
-                  0\  =  /0
-                ___/`---'\___
-              .' --|     |-- '.
-             / --|||  :  |||-- \
-            / _||||| -:- |||||- \
-           |   | \--  -  --/ |   |
-           | \_|  ''\---/''  |_/ |
-           \  .-\__  '-'  ___/-. /
-         ___'. .'  /--.--\  `. .'___
-      ."" '<  `.___\_<|>_/___.' >' "".
-     | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-     \  \ `_.   \_ __\ /__ _/   .-` /  /
- =====`-.____`.___ \_____/___.-`___.-'=====
-                   `=---=`
-
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-                         佛祖保佑     永无BUG
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-  
- *
+ * _oo0oo_
+ * o8888888o
+ * 88" . "88
+ * (| -_- |)
+ * 0\  =  /0
+ * ___/`---'\___
+ * .' --|     |-- '.
+ * / --|||  :  |||-- \
+ * / _||||| -:- |||||- \
+ * |   | \--  -  --/ |   |
+ * | \_|  ''\---/''  |_/ |
+ * \  .-\__  '-'  ___/-. /
+ * ___'. .'  /--.--\  `. .'___
+ * ."" '<  `.___\_<|>_/___.' >' "".
+ * | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ * \  \ `_.   \_ __\ /__ _/   .-` /  /
+ * =====`-.____`.___ \_____/___.-`___.-'=====
+ * `=---=`
+ * <p>
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * <p>
+ * 佛祖保佑     永无BUG
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * <p>
+ * <p>
  * 启动类
- *
  */
 public final class AppGate {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(AppGate.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppGate.class);
 
-	private static String configPath;
-	static JedisManager redisManager;
-	private static GateServer gateServer;
+    private static String configPath;
+    static JedisManager redisManager;
+    private static GateServer gateServer;
 
-	private AppGate() {
-	}
+    private AppGate() {
+    }
 
-	public static void main(String[] args) {
-		initConfigPath();
+    public static void main(String[] args) {
+        initConfigPath();
 
-		// redis
-		JedisClusterConfig jedisClusterConfig = FileUtil.getConfigXML(configPath, "jedisClusterConfig.xml",
-				JedisClusterConfig.class);
-		if (jedisClusterConfig == null) {
-			LOGGER.error("redis配置{}未找到", configPath);
-			System.exit(1);
-		}
-		redisManager = new JedisManager(jedisClusterConfig);
+        // redis
+        JedisClusterConfig jedisClusterConfig = FileUtil.getConfigXML(configPath, "jedisClusterConfig.xml",
+                JedisClusterConfig.class);
+        if (jedisClusterConfig == null) {
+            LOGGER.error("redis配置{}未找到", configPath);
+            System.exit(1);
+        }
+        redisManager = new JedisManager(jedisClusterConfig);
 
-		// 创建mongodb连接
-		MongoManager.getInstance().createConnect(configPath);
 
-		// 加载脚本
-		ScriptManager.getInstance().init(null);
+        redisManager.hset("test-game", "1", 1);
 
-		// 通信服务
-		gateServer = new GateServer();
-		new Thread(gateServer).start();
-	}
+        // 创建mongodb连接
+        MongoManager.getInstance().createConnect(configPath);
 
-	private static void initConfigPath() {
-		File file = new File(System.getProperty("user.dir"));
-		if ("target".equals(file.getName())) {
-			configPath = file.getPath() + File.separatorChar + "config";
-		} else {
-			configPath = file.getPath() + File.separatorChar + "target" + File.separatorChar + "config";
-		}
-		LOGGER.info("配置路径为：" + configPath);
-	}
+        // 加载脚本
+        ScriptManager.getInstance().init(null);
 
-	public static String getConfigPath() {
-		return configPath;
-	}
+        // 通信服务
+        gateServer = new GateServer();
+        new Thread(gateServer).start();
+    }
 
-	public static GateServer getHallServer() {
-		return gateServer;
-	}
+    private static void initConfigPath() {
+        File file = new File(System.getProperty("user.dir"));
+
+        String name = "game-gate";
+        ProjectNameMapUtil.setName(name);
+        ScriptManager scriptManager = new ScriptManager();
+
+        if ("target".equals(file.getName())) {
+            configPath = file.getPath() + File.separatorChar + name + File.separator + "config";
+        } else {
+            configPath = file.getPath() + File.separatorChar + name + File.separator + "target" + File.separatorChar + "config";
+        }
+//        configPath = file.getPath() + File.separator + "game-gate/config_local";
+        LOGGER.info("配置路径为：" + configPath);
+    }
+
+    public static String getConfigPath() {
+        return configPath;
+    }
+
+    public static GateServer getHallServer() {
+        return gateServer;
+    }
 
 }

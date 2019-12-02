@@ -3,10 +3,6 @@
   <nodes>
     <com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
       <ip>${REDIS_IP}</ip>
-      <port>7000</port>
-    </com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
-    <com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
-      <ip>${REDIS_IP}</ip>
       <port>7001</port>
     </com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
     <com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
@@ -19,11 +15,15 @@
     </com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
     <com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
       <ip>${REDIS_IP}</ip>
-      <port>7000</port>
+      <port>7004</port>
     </com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
     <com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
       <ip>${REDIS_IP}</ip>
-      <port>7000</port>
+      <port>7005</port>
+    </com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
+    <com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
+      <ip>${REDIS_IP}</ip>
+      <port>7006</port>
     </com.jjy.game.engine.redis.config_-JedisClusterNodesConfig>
   </nodes>
   <poolMaxTotal>500</poolMaxTotal>

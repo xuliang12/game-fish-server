@@ -29,7 +29,7 @@ public class RedissonTest {
 	 * @QQ 359135103
 	 * 2017年9月30日 上午10:46:43
 	 */
-	@Test
+//	@Test
 	public void testExipreAsync() {
 		//long 
 		RAtomicLong atomicLong = RedissonManager.getRedissonClient().getAtomicLong("longtest");

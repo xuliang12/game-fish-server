@@ -14,7 +14,7 @@ import com.jzy.game.engine.mail.MailManager;
 @Ignore
 public class MailManagerTest {
 
-	@Test
+//	@Test
 	public void testSendMail(){
 		MailManager.getInstance().sendTextMailAsync("hh", "dd", "359135103@qq.com");
 		try {

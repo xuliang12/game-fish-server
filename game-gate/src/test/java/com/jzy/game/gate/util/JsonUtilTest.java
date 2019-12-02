@@ -17,7 +17,7 @@ import com.jzy.game.model.struct.User;
 @Ignore
 public class JsonUtilTest {
 
-	@Test
+//	@Test
 	public void testObjectToMap() {
 		User user = new User();
 		user.setId(1);
@@ -28,7 +28,7 @@ public class JsonUtilTest {
 		System.err.println(map);
 	}
 
-	@Test
+//	@Test
 	public void testMapToObject() {
 		Map<String, String> map = new HashMap<>();
 		map.put("id", String.valueOf(1));

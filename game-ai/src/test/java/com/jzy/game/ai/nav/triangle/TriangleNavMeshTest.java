@@ -45,7 +45,7 @@ public class TriangleNavMeshTest {
 	 * @author JiangZhiYong
 	 * @QQ 359135103 2017年11月7日 下午5:39:30
 	 */
-	@Test
+//	@Test
 	public void testLoadNavMesh() {
 		TriangleGraph graph = navMesh.getGraph();
 		System.out.println(String.format("三角形个数：%d 所有边%s 共享边：%d 独立边：%d", graph.getTriangleCont(),
@@ -56,7 +56,7 @@ public class TriangleNavMeshTest {
 	/**
 	 * 获取三角形
 	 */
-	@Test
+//	@Test
 	public void testTriangle() {
 		long start = TimeUtil.currentTimeMillis();
 		for (int i = 0; i < 1; i++) {
@@ -73,7 +73,7 @@ public class TriangleNavMeshTest {
 	/**
 	 * 查找路径
 	 */
-	@Test
+//	@Test
 	public  void testPerformance() {
 		TriangleGraphPath path=new TriangleGraphPath();
 		TrianglePointPath pointPath=new TrianglePointPath();
@@ -98,7 +98,7 @@ public class TriangleNavMeshTest {
 		
 	}
 	
-	@Test
+//	@Test
 	public void testFindPath() {
 	    TrianglePointPath pointPath=new TrianglePointPath();
 	    List<Vector3> list = navMesh.findPath(new Vector3(104, 138), new Vector3(212.0f,232.0f), pointPath);
@@ -107,7 +107,7 @@ public class TriangleNavMeshTest {
         }
 	}
 	
-	@Test
+//	@Test
 	public void test() {
 		System.out.println(1 << 9);
 	}

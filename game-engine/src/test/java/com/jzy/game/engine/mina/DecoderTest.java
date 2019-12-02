@@ -17,7 +17,7 @@ public class DecoderTest {
 	/**
 	 * 测试大小端
 	 */
-	@Test
+//	@Test
 	public void testEnding(){
 		ByteOrder byteOrder = ByteOrder.nativeOrder();
 		System.err.println(byteOrder);

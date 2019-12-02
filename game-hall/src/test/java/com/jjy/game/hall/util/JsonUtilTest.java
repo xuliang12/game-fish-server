@@ -22,7 +22,7 @@ public class JsonUtilTest {
 	 * @QQ 359135103
 	 * 2017年9月29日 下午5:28:29
 	 */
-	@Test
+//	@Test
 	public void testJacksonAndFastJson() {
 		//jackson {"@class":"com.jjy.game.model.struct.Item","configId":1,"createTime":["java.util.Date",1506677002383],"id":380216560713729,"num":20}
 		Item item = new Item();

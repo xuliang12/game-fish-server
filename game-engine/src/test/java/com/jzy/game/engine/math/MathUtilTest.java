@@ -19,7 +19,7 @@ public class MathUtilTest {
     /**
      * 随机坐标
      */
-    @Test
+//    @Test
     public void testRandomVector3() {
         for (int i = 0; i < 1000; i++) {
             System.out.println(MathUtil.random(new Vector3(), new Vector3(10f, 10f, 10f)));
@@ -29,7 +29,7 @@ public class MathUtilTest {
     /**
      * 随机种子测试
      */
-    @Test
+//    @Test
     public void testRandomSeed() {
         Random random1 = new Random(10000);
         Random random2 = new Random(10000);
@@ -40,40 +40,40 @@ public class MathUtilTest {
         }
     }
 
-    @Test
+//    @Test
     public void testFloor() {
         Assert.assertEquals(0, MathUtil.floor(0));
         Assert.assertEquals(1, MathUtil.floor(1.6f));
         Assert.assertEquals(-1, MathUtil.floor(-0.5f));
     }
 
-    @Test
+//    @Test
     public void testFloorPositive() {
         Assert.assertEquals(0, MathUtil.floorPositive(0f));
         Assert.assertEquals(1, MathUtil.floorPositive(1.5f));
     }
 
-    @Test
+//    @Test
     public void testCeil() {
         Assert.assertEquals(0, MathUtil.ceil(0));
         Assert.assertEquals(2, MathUtil.ceil(1.4f));
         Assert.assertEquals(-1, MathUtil.ceil(-1.6f));
     }
 
-    @Test
+//    @Test
     public void testCeilPositive() {
         Assert.assertEquals(0, MathUtil.ceilPositive(0));
         Assert.assertEquals(2, MathUtil.ceilPositive(1.4f));
     }
 
-    @Test
+//    @Test
     public void testRoundPositive() {
         Assert.assertEquals(0, MathUtil.roundPositive(0));
         Assert.assertEquals(1, MathUtil.roundPositive(1.3f));
         Assert.assertEquals(2, MathUtil.roundPositive(1.7f));
     }
 
-    @Test
+//    @Test
     public void testSin() {
         Assert.assertEquals(0, MathUtil.sin(0.0f), 0.01);
         Assert.assertEquals(0.5f, MathUtil.sin(PI / 6), 0.01);
@@ -81,7 +81,7 @@ public class MathUtilTest {
         Assert.assertEquals(0, MathUtil.sin(PI * 2), 0.01);
     }
 
-    @Test
+//    @Test
     public void testSinDeg() {
         Assert.assertEquals(0, MathUtil.sinDeg(0.0f), 0.01);
         Assert.assertEquals(0.5, MathUtil.sinDeg(30), 0.01);
@@ -89,7 +89,7 @@ public class MathUtilTest {
         Assert.assertEquals(0, MathUtil.sinDeg(180), 0.01);
     }
 
-    @Test
+//    @Test
     public void testCos() {
         Assert.assertEquals(1, MathUtil.cos(0), 0);
         Assert.assertEquals(0.5, MathUtil.cos(PI / 3), 0.01);
@@ -97,7 +97,7 @@ public class MathUtilTest {
         Assert.assertEquals(1, MathUtil.cos(PI * 2), 0.01);
     }
 
-    @Test
+//    @Test
     public void testCosDeg() {
         Assert.assertEquals(1, MathUtil.cosDeg(0), 0.01);
         Assert.assertEquals(0.5, MathUtil.cosDeg(60), 0.01);
@@ -105,13 +105,13 @@ public class MathUtilTest {
         Assert.assertEquals(1, MathUtil.cosDeg(360), 0.01);
     }
 
-    @Test
+//    @Test
     public void testIsPowerOfTwo() {
         Assert.assertFalse(MathUtil.isPowerOfTwo(3));
         Assert.assertTrue(MathUtil.isPowerOfTwo(2));
     }
 
-    @Test
+//    @Test
     public void testNextPowerOfTwo() {
         Assert.assertEquals(1, MathUtil.nextPowerOfTwo(0));
         Assert.assertEquals(16, MathUtil.nextPowerOfTwo(13));
@@ -119,7 +119,7 @@ public class MathUtilTest {
         Assert.assertEquals(0, MathUtil.nextPowerOfTwo(-25));
     }
 
-    @Test
+//    @Test
     public void testRound() {
         Assert.assertEquals(0, MathUtil.round(0.0f));
 
@@ -134,7 +134,7 @@ public class MathUtilTest {
         Assert.assertEquals(-8, MathUtil.round(-8f));
     }
 
-    @Test
+//    @Test
     public void testClampShort() {
         Assert.assertEquals((short) 5, MathUtil.clamp((short) 20, (short) 1, (short) 5));
         Assert.assertEquals((short) 2, MathUtil.clamp((short) -6, (short) 2, (short) 8));
@@ -143,7 +143,7 @@ public class MathUtilTest {
         Assert.assertEquals((short) 12, MathUtil.clamp((short) 12, (short) 9, (short) 12));
     }
 
-    @Test
+//    @Test
     public void testClampInt() {
         Assert.assertEquals(5, MathUtil.clamp(20, 1, 5));
         Assert.assertEquals(2, MathUtil.clamp(-6, 2, 8));
@@ -152,7 +152,7 @@ public class MathUtilTest {
         Assert.assertEquals(12, MathUtil.clamp(12, 9, 12));
     }
 
-    @Test
+//    @Test
     public void testClampFloat() {
         Assert.assertEquals(5.1f, MathUtil.clamp(20.6f, 1.8f, 5.1f), 0);
         Assert.assertEquals(2.2f, MathUtil.clamp(-6.1f, 2.2f, 8.3f), 0);
@@ -161,7 +161,7 @@ public class MathUtilTest {
         Assert.assertEquals(12.5f, MathUtil.clamp(12.5f, 9.3f, 12.5f), 0);
     }
 
-    @Test
+//    @Test
     public void testClampDouble() {
         Assert.assertEquals(5.1d, MathUtil.clamp(20.6d, 1.8d, 5.1d), 0);
         Assert.assertEquals(2.2d, MathUtil.clamp(-6.1d, 2.2d, 8.3d), 0);
@@ -170,7 +170,7 @@ public class MathUtilTest {
         Assert.assertEquals(12.5d, MathUtil.clamp(12.5d, 9.3d, 12.5d), 0);
     }
 
-    @Test
+//    @Test
     public void testClampLong() {
         Assert.assertEquals(5L, MathUtil.clamp(20L, 1L, 5));
         Assert.assertEquals(2L, MathUtil.clamp(-6L, 2L, 8));
@@ -179,7 +179,7 @@ public class MathUtilTest {
         Assert.assertEquals(12L, MathUtil.clamp(12L, 9L, 12));
     }
 
-    @Test
+//    @Test
     public void testIsZero() {
         Assert.assertFalse(MathUtil.isZero(0x1p-19f));
 
@@ -193,7 +193,7 @@ public class MathUtilTest {
         Assert.assertTrue(MathUtil.isZero(-5f, 10));
     }
 
-    @Test
+//    @Test
     public void testIsEqual() {
         Assert.assertFalse(MathUtil.isEqual(-4f, 4f));
         Assert.assertTrue(MathUtil.isEqual(0.0f, -0.0f));
@@ -203,22 +203,22 @@ public class MathUtilTest {
         Assert.assertTrue(MathUtil.isEqual(1, 2, 1));
     }
 
-    @Test
+//    @Test
     public void testLerp() {
         Assert.assertEquals(3, MathUtil.lerp(1, 5, 0.5f), 0);
     }
 
-    @Test
+//    @Test
     public void testLerpAngle() {
         Assert.assertEquals(4.73, MathUtil.lerpAngle(0.5f, 10.5f, 0.8f), 0.01);
     }
 
-    @Test
+//    @Test
     public void testLerpAngleDeg() {
         Assert.assertEquals(90, MathUtil.lerpAngleDeg(30f, 180f, 10f), 0.01);
     }
 
-    @Test
+//    @Test
     public void testAtan2() {
         //Tested to within error specified
         Assert.assertEquals(HALF_PI, MathUtil.atan2(1, 0), 0.00488);
@@ -229,7 +229,7 @@ public class MathUtilTest {
         Assert.assertEquals(1.025, MathUtil.atan2(5, 3), 0.00488);
     }
 
-    @Test
+//    @Test
     public void testLog(){
         Assert.assertEquals(1, MathUtil.log(10, 10), 0);
         Assert.assertEquals(0, MathUtil.log(10, 1), 0);

@@ -13,7 +13,7 @@ import com.jzy.game.engine.struct.Bits;
  */
 public class BitsTest {
 	
-	@Test
+//	@Test
 	public void test() {
 		Bits bits=new Bits();
 		bits.set(3);

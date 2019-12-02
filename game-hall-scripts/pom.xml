@@ -13,6 +13,8 @@
 	<name>game-hall-scripts</name>
 	<url>http://maven.apache.org</url>
 	<properties>
+		<javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>

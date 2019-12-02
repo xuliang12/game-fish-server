@@ -22,7 +22,7 @@ import org.junit.Test;
 public class MongoTest {
 
     @Ignore
-    @Test
+//    @Test
     public void testInsert() {
         MongoClientURI connectionString = new MongoClientURI("mongodb://127.0.0.1");
         MongoClient mongoClient = new MongoClient(connectionString);
@@ -38,7 +38,7 @@ public class MongoTest {
         mongoClient.close();
     }
 
-    @Test
+//    @Test
     public void testInsetData() throws Exception{
 //        MongoUtil.insertConfigData("E:\\arts\\策划文档\\翻牌机\\翻牌机数值\\ConfigRoom.xlsx", "config_room", "lztb_att");
 //        MongoUtil.insertConfigData("E:\\arts\\策划文档\\翻牌机\\翻牌机数值\\ConfigHandsel.xlsx", "config_handsel", "lztb_att");

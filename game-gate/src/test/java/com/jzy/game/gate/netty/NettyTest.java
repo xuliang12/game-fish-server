@@ -34,7 +34,7 @@ public class NettyTest {
 	 * @QQ 359135103
 	 * 2017年8月25日 下午4:26:30
 	 */
-	@Test
+//	@Test
 	public void testSingleClient() {
 		try {
 			NettyClientConfig config=new NettyClientConfig();
@@ -77,7 +77,7 @@ public class NettyTest {
 	 * @QQ 359135103
 	 * 2017年8月25日 下午4:26:30
 	 */
-	@Test
+//	@Test
 	public void testMutilClient() {
 		try {
 			NettyClientConfig config=new NettyClientConfig();
@@ -126,7 +126,7 @@ public class NettyTest {
 		
 	}
 	
-	@Test
+//	@Test
 	public void testInetAddress() throws Exception{
 		InetAddress inetAddress = InetAddress.getByName("192.168.0.17");
 		System.err.println(inetAddress);

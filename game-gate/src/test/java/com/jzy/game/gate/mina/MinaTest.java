@@ -19,7 +19,7 @@ import com.jzy.game.engine.server.Service;
 @Ignore
 public class MinaTest {
 
-	@Test
+//	@Test
 	public void testUdpServer() throws Exception{
 		MinaServerConfig minaServerConfig=new MinaServerConfig();
 		minaServerConfig.setPort(8888);

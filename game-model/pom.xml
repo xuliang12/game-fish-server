@@ -52,7 +52,7 @@
 									<!-- 实体类生成路径 -->
 									<entityPackage>\com\jzy\game\model\mongo\bydr\entity</entityPackage>
 									<!-- 配置表路径 -->
-									<configTablePath>E:\Java\game-server\game-config\src\main\resources\table</configTablePath>
+									<configTablePath>/Users/xuliang/Documents/game-server/game-server/game-config/src/main/resources/table</configTablePath>
 								</configuration>
 								<id>mongoEntity</id>
 								<goals>

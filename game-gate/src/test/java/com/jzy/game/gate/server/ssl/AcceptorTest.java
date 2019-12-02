@@ -41,12 +41,12 @@ public class AcceptorTest extends AbstractTest {
 	public AcceptorTest() {
 	}
 
-	@Test
+//	@Test
 	public void testTCP() throws Exception {
 		testTCP0(new Socket("127.0.0.1", port));
 	}
 
-	@Test
+//	@Test
 	public void testTCPWithSSL() throws Exception {
 		// Add an SSL filter
 		useSSL = true;

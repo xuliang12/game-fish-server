@@ -14,7 +14,7 @@ public class MongoClientConfig {
     @Element(required = false)
     private String dbName = "lztb_hall";
     /**数据库连接地址*/
-    @Element(required = true)
+    @Element(required = false)
     private String url="mongodb://127.0.0.1:27017/?replicaSet=rs_lztb";
 
     public String getDbName() {

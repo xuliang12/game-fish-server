@@ -62,7 +62,7 @@ public class PolygonNavMeshTest {
 	 * {@link TriangleNavMesh}平均耗时0.53ms，加载耗时805ms;{@link PolygonNavMesh}平均耗时0.28ms,加载耗时10547</p>
 	 * <p>在大地图中（二十个地图放在一起连接寻路），多边形个数增加对性能影响较少，使用四叉树进行预计算耗时严重</p>
 	 */
-    @Test
+//    @Test
     public void testPerformance() {
         PolygonPointPath pointPath=new PolygonPointPath();
         List<Vector3> paths=null;
@@ -88,7 +88,7 @@ public class PolygonNavMeshTest {
     /**
      * 查询获取路径
      */
-    @Test
+//    @Test
     public void testFindPath() {
 //        PolygonGraphPath path=new PolygonGraphPath();
 //        navMesh.findPath(new Vector3(104, 138), new Vector3(212.0f,232.0f), path);
@@ -113,7 +113,7 @@ public class PolygonNavMeshTest {
      * 
      * <p>
      */
-    @Test
+//    @Test
     public void testFindRandomPointInPath() {
     	long begin=TimeUtil.currentTimeMillis();
     	for(int i=0;i<10000;i++) {

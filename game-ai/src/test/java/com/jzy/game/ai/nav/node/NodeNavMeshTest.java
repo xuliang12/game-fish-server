@@ -26,7 +26,7 @@ public class NodeNavMeshTest {
 		 navMesh=new NodeNavMesh(FILE_PATH,false);
 	}
 	
-	@Test
+//	@Test
 	public void test(){
 		NodeNavMesh navMesh=new NodeNavMesh(FILE_PATH,true);
 		navMesh.path(new Vector3(291, 0, 90), new Vector3(728, 0, 550));
@@ -42,7 +42,7 @@ public class NodeNavMeshTest {
 	 * <p>4.三角形个数975,长距离寻路10000次,{@link NodeNavMesh}平均耗时48000ms，{@link TriangleNavMesh}未找到路径？？？,{@link PolygonNavMesh} 未找到路径</p>
 	 * <p>5.三角形个数975,长距离寻路10000次,{@link NodeNavMesh}平均耗时136000ms，{@link TriangleNavMesh}4400ms</p>
 	 */
-	@Test
+//	@Test
 	public void testPerformance() {
 		long start = TimeUtil.currentTimeMillis();
 		PathData path=null;

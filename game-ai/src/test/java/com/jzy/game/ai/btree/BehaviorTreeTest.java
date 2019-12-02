@@ -33,7 +33,7 @@ public class BehaviorTreeTest {
 	 * 2017年11月24日 下午5:20:06
 	 * @throws Exception
 	 */
-	@Test
+//	@Test
 	public void testDogBehavior() throws Exception{
 		Selector<Dog> selector = new Selector<Dog>();
 
@@ -67,7 +67,7 @@ public class BehaviorTreeTest {
 	 * 解析xml行为树
 	 */
 	@SuppressWarnings("unchecked")
-	@Test
+//	@Test
 	public void testParseXml()  throws Exception{
 		String path = BehaviorTreeTest.class.getResource("").getPath();
 		BehaviorTreeManager.getInstance().parseBehaviorTree(path);

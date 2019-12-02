@@ -15,7 +15,7 @@ public class TriangleTest {
 	/**
 	 * 测试点是否在三角形内部
 	 */
-	@Test
+//	@Test
 	public void testPointIntTriangle() {
 		Vector3 point1=new Vector3(4, 1);
 		Vector3 point2=new Vector3(4, 5);
@@ -28,7 +28,7 @@ public class TriangleTest {
 	/**
 	 * 获取三角形内部随机点
 	 */
-	@Test
+//	@Test
 	public void testGetRandomPoint() {
 		Triangle triangle=new Triangle(new Vector3(0, 0), new Vector3(10, 0), new Vector3(0, 10), 1);
 		

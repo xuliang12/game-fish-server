@@ -48,12 +48,12 @@ public class SSLFilterTest {
 		acceptor.dispose();
 	}
 
-	@Test
+//	@Test
 	public void testMessageSentIsCalled() throws Exception {
 		testMessageSentIsCalled(false);
 	}
 
-	@Test
+//	@Test
 	public void testMessageSentIsCalled_With_SSL() throws Exception {
 		testMessageSentIsCalled(true);
 	}

@@ -12,7 +12,7 @@ import com.jzy.game.engine.util.SysUtil;
  */
 public class SysUtilTest {
 
-	@Test
+//	@Test
 	public void testJvmInfo() {
 		System.err.println(SysUtil.jvmInfo("\r\n"));
 //		System.err.println(SysUtil.jvmInfo("<br>"));

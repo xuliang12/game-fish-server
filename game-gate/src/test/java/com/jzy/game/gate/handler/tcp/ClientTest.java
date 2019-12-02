@@ -57,7 +57,7 @@ public class ClientTest {
 	 *
 	 * @throws Exception
 	 */
-	@Test
+//	@Test
 	public void testLogin() throws Exception {
 		START_TIME = System.currentTimeMillis();
 		LoginRequest.Builder builder = LoginRequest.newBuilder();

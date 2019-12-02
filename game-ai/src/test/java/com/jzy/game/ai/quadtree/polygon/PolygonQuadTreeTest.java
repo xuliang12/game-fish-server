@@ -41,7 +41,7 @@ public class PolygonQuadTreeTest {
 		return qt;
 	}
 
-	@Test
+//	@Test
 	public void testGetCount() {
 		PolygonGuadTree tree = getTree();
 		System.out.println(String.format("个数%d,真实个数%d", tree.getCount(), tree.getRealCount()));
@@ -51,7 +51,7 @@ public class PolygonQuadTreeTest {
 	/**
 	 * 测试获取
 	 */
-	@Test
+//	@Test
 	public void testGet() {
 		PolygonGuadTree tree = getTree();
 		
@@ -95,7 +95,7 @@ public class PolygonQuadTreeTest {
 	/**
 	 * 测试查询
 	 */
-	@Test
+//	@Test
 	public void testSerarchWithIn() {
 		long startTime=TimeUtil.currentTimeMillis();
 		for(int i=0;i<1;i++) {
@@ -139,7 +139,7 @@ public class PolygonQuadTreeTest {
 	 *  实际在大地图中测试速度快了20倍左右
 	 * </p>
 	 */
-	@Test
+//	@Test
 	public void testPerformance() {
 		PolygonGuadTree tree = getTree();
 		long startTime = TimeUtil.currentTimeMillis();

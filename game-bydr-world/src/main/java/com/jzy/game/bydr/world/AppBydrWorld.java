@@ -2,6 +2,7 @@ package com.jzy.game.bydr.world;
 
 import java.io.File;
 
+import com.jzy.game.engine.util.ProjectNameMapUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.jzy.game.bydr.world.server.BydrWorldServer;
@@ -10,41 +11,47 @@ import com.jzy.game.engine.script.ScriptManager;
 
 /**
  * 捕鱼世界服，处理竞技场匹配等全局事件
- * 
+ *
  * @author JiangZhiYong
  * @QQ 359135103 2017年8月1日 下午5:15:07
  */
 public class AppBydrWorld {
-	private static final Logger LOGGER = LoggerFactory.getLogger(AppBydrWorld.class);
-	private static String configPath;
-	protected static JedisManager redisManager;
-	private static BydrWorldServer bydrWorldServer;
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppBydrWorld.class);
+    private static String configPath;
+    protected static JedisManager redisManager;
+    private static BydrWorldServer bydrWorldServer;
 
-	public static void main(String[] args) {
-		initConfigPath();
-		// redis
-		redisManager = new JedisManager(configPath);
+    public static void main(String[] args) {
+        initConfigPath();
+        // redis
+        redisManager = new JedisManager(configPath);
 
-		// 加载脚本
-		ScriptManager.getInstance().init(str -> System.exit(0));
-		
-		bydrWorldServer=new BydrWorldServer(configPath);
-		new Thread(bydrWorldServer).start();
-	}
+        // 加载脚本
+        ScriptManager.getInstance().init(str -> System.exit(0));
 
-	private static void initConfigPath() {
-		File file = new File(System.getProperty("user.dir"));
-		if ("target".equals(file.getName())) {
-			configPath = file.getPath() + File.separatorChar + "config";
-		} else {
-			configPath = file.getPath() + File.separatorChar + "target" + File.separatorChar + "config";
-		}
-		LOGGER.info("配置路径为：" + configPath);
-	}
+        bydrWorldServer = new BydrWorldServer(configPath);
+        new Thread(bydrWorldServer).start();
+    }
 
-	public static BydrWorldServer getBydrWorldServer() {
-		return bydrWorldServer;
-	}
+    private static void initConfigPath() {
+        File file = new File(System.getProperty("user.dir"));
 
-	
+
+        String name = "game-bydr-world";
+        ProjectNameMapUtil.setName(name);
+
+        ScriptManager scriptManager = new ScriptManager();
+        if ("target".equals(file.getName())) {
+            configPath = file.getPath() + File.separatorChar + name + File.separator + "config";
+        } else {
+            configPath = file.getPath() + File.separatorChar + name + File.separator + "target" + File.separatorChar + "config";
+        }
+        LOGGER.info("配置路径为：" + configPath);
+    }
+
+    public static BydrWorldServer getBydrWorldServer() {
+        return bydrWorldServer;
+    }
+
+
 }

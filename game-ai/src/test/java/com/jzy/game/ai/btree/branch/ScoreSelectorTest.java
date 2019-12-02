@@ -26,7 +26,7 @@ public class ScoreSelectorTest {
 	/**
 	 * 测试分数选择
 	 */
-	@Test
+//	@Test
 	public void testScoreSelector() throws Exception{
 		ScoreSelector<Dog> selector = new DogRandomSocreSelector();
 

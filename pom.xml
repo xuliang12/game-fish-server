@@ -19,6 +19,15 @@
 		<module>game-hall</module>
 		<module>game-bydr-world</module>
 		<module>game-ai</module>
+		<module>game-bydr-scripts</module>
+		<module>game-bydr-world-scripts</module>
+		<module>game-cluster-scripts</module>
+		<module>game-gate-scripts</module>
+		<module>game-hall-scripts</module>
+		<module>game-manage</module>
+<!--
+		<module>game-tool-scripts</module>
+-->
 	</modules>
 
 	<properties>

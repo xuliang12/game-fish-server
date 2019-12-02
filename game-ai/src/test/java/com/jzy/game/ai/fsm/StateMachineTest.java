@@ -48,7 +48,7 @@ public class StateMachineTest {
 	/**
 	 * 测试状态
 	 */
-	@Test
+//	@Test
 	public void testStateMachine() throws Exception {
 
 		while (true) {

@@ -23,7 +23,7 @@ public class ClusterHttpTest {
 	 * @author JiangZhiYong
 	 * @QQ 359135103 2017年7月12日 下午3:23:08
 	 */
-	@Test
+//	@Test
 	public void testGetHallIp() {
 		Map<String, String> paramsMap = new HashMap<>();
 		String httpPost = HttpUtil.httpPost("http://127.0.0.1:8001/server/hall/ip", paramsMap);

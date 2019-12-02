@@ -64,6 +64,7 @@ public class JedisManager {
 				LOGGER.error(node.toString(), e);
 			}
 		});
+
 		GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
 		poolConfig.setMaxTotal(config.getPoolMaxTotal());
 		poolConfig.setMaxIdle(config.getPoolMaxIdle());
@@ -74,7 +75,10 @@ public class JedisManager {
 		poolConfig.setTestOnBorrow(config.isTestOnBorrow());
 		poolConfig.setTestWhileIdle(config.isTestWhileIdle());
 		poolConfig.setTestOnReturn(config.isTestOnReturn());
-		jedisCluster = new JedisCluster(jedisClusterNodes, config.getConnectionTimeout(), config.getSoTimeout(),
+//		jedisCluster = new JedisCluster(jedisClusterNodes, config.getConnectionTimeout(), config.getSoTimeout(),
+//				config.getMaxRedirections(), poolConfig);
+		//todo  先用单节点代替
+		jedisCluster = new JedisCluster(jedisClusterNodes.iterator().next(), config.getConnectionTimeout(), config.getSoTimeout(),
 				config.getMaxRedirections(), poolConfig);
 	}
 

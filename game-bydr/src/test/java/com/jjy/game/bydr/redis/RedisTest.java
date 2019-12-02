@@ -12,7 +12,7 @@ import com.jzy.game.engine.redis.jedis.JedisManager;
  */
 public class RedisTest {
 
-	@Test
+//	@Test
 	public void test(){
 		//RedisManager.getJedisCluster().ev
 	}

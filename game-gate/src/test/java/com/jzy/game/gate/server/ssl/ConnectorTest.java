@@ -72,13 +72,13 @@ public class ConnectorTest extends AbstractTest {
         connectorSSLFilter.setUseClientMode(true); // set client mode
     }
 
-    @Test
+//    @Test
     public void testTCP() throws Exception {
         IoConnector connector = new NioSocketConnector();
         testConnector(connector);
     }
 
-    @Test
+//    @Test
     public void testTCPWithSSL() throws Exception {
         useSSL = true;
         // Create a connector
@@ -89,7 +89,7 @@ public class ConnectorTest extends AbstractTest {
         testConnector(connector);
     }
 
-    @Test
+//    @Test
     public void testUDP() throws Exception {
         IoConnector connector = new NioDatagramConnector();
         testConnector(connector);

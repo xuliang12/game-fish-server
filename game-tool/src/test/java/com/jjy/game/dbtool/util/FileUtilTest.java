@@ -19,7 +19,7 @@ import com.jzy.game.tool.util.FileUtil;
  */
 public class FileUtilTest {
 
-    @Test
+//    @Test
     public void testGetFile() {
         List<File> sourceFileList = new ArrayList<>();
         FileUtil.getFiles("E:\\arts\\策划文档\\翻牌机\\翻牌机数值", sourceFileList, "xlsx", null);

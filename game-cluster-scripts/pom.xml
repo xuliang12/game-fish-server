@@ -14,6 +14,9 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
+
+
 	</properties>
 	<dependencies>
 <!-- 		<dependency>
@@ -73,16 +76,28 @@
 	</build>
 	
 	<distributionManagement>
+		<!--<repository>-->
+			<!--<id>maven-releases</id>-->
+			<!--<name>Nexus Releases Repository</name>-->
+			<!--<url>http://127.0.0.1:8081/repository/maven-releases/</url>-->
+		<!--</repository>-->
+		<!--<snapshotRepository>-->
+			<!--<id>maven-snapshots</id>-->
+			<!--<name>snapshots</name>-->
+			<!--<url>http://127.0.0.1:8081/repository/maven-snapshots/</url>-->
+		<!--</snapshotRepository>-->
 		<repository>
-			<id>maven-releases</id>
-			<name>Nexus Releases Repository</name>
-			<url>http://192.168.0.71:8081/repository/maven-releases/</url>
+			<id>releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/releases/</url>
 		</repository>
+		<!-- 快照版私服仓库 -->
 		<snapshotRepository>
-			<id>maven-snapshots</id>
-			<name>snapshots</name>
-			<url>http://192.168.0.71:8081/repository/maven-snapshots/</url>
+			<id>snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
+
 	</distributionManagement>
 	
 </project>

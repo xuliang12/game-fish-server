@@ -17,7 +17,7 @@ import com.jzy.game.engine.math.Vector3;
  */
 public class DelaunayTriangleTest {
 
-	@Test
+//	@Test
 	public void testBuildDelaunayTriangle() {
 		List<DelaunayTriangle> triangles = new ArrayList<>();
 		triangles.add(new DelaunayTriangle(new Vector3(250, -5000), new Vector3(-5000, 400), new Vector3(5000, 400)));

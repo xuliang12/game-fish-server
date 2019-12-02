@@ -13,7 +13,7 @@ import com.jzy.game.engine.mq.MQProducer;
  */
 public class MQProducerTest {
 
-	@Test
+//	@Test
 	public void testSendMsg(){
 		MQConfig mqConfig=new MQConfig();
 		MQProducer mqProducer=new MQProducer(mqConfig);

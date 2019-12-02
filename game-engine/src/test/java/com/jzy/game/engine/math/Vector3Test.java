@@ -18,7 +18,7 @@ public class Vector3Test {
 	/**
 	 * 测试向量距离是否靠近
 	 */
-	@Test
+//	@Test
 	public void testIsColseTo() {
 		Vector3 vector3=new Vector3(1, 0, 1);
 		Vector3 vector32=new Vector3(2, 2, 2);
@@ -32,7 +32,7 @@ public class Vector3Test {
 	/**
 	 * 测试移动
 	 */
-	@Test
+//	@Test
 	public void testMove() {
 		Vector3 vector3 = Vector3.move(2f, new Vector3(), new Vector3(10f, 10f, 10f), 2f);
 		System.out.println(vector3);
@@ -44,7 +44,7 @@ public class Vector3Test {
 	/**
 	 * 测试是否在线段上
 	 */
-	@Test
+//	@Test
 	public void testIsOnSegment() {
 		assertTrue(Vector3.isPointOnSegment(new Vector3(0, 0), new Vector3(10, 10), new Vector3(5, 5)));
 		assertFalse(Vector3.isPointOnSegment(new Vector3(0, 0), new Vector3(10, 10), new Vector3(15, 15)));

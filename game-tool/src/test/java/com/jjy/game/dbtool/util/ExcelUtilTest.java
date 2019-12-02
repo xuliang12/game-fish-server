@@ -16,14 +16,14 @@ import com.jzy.game.tool.util.ExcelUtil;
  */
 public class ExcelUtilTest {
 
-    @Test
+//    @Test
     public void testExcelRead() throws Exception {
         // ExcelUtil.getMetaData("E:\\arts\\策划文档\\翻牌机\\翻牌机数值\\ConfigRoom.xlsx");
         //ExcelUtil.readExcel("E:\\arts\\策划文档\\翻牌机\\翻牌机数值\\ConfigRoom.xlsx");
         ExcelUtil.getMetaData("E:\\arts\\策划文档\\翻牌机\\翻牌机数值\\ConfigRoom.xlsx", "room");
     }
 
-    @Test
+//    @Test
     public void testSheetName() throws Exception {
 //        String[] sheetNames = ExcelUtil.getSheetNames("E:\\arts\\策划文档\\翻牌机\\翻牌机数值\\ConfigRoom.xlsx");
 //        for (String sheetName : sheetNames) {

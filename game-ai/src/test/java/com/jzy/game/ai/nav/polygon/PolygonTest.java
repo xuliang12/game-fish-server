@@ -18,7 +18,7 @@ public class PolygonTest {
     /**
      * 测试面积
      */
-    @Test
+//    @Test
     public void testCalculateArea() {
         Polygon polygon = new Polygon(1, new Vector3(0, 0), new Vector3(0, 1), new Vector3(1, 0));
         Assert.assertEquals(0.5, polygon.getArea(), 0.001);
@@ -27,7 +27,7 @@ public class PolygonTest {
     /**
      * 测试是否为凸多边形
      */
-    @Test
+//    @Test
     public void testIsConvexPolygon() {
         Polygon polygon = new Polygon(1, new Vector3(0, 0), new Vector3(0, 1), new Vector3(1, 0));
         Assert.assertTrue(polygon.calculateIsConvex());
@@ -42,7 +42,7 @@ public class PolygonTest {
     /**
      * 测试点是否在多边形中
      */
-    @Test
+//    @Test
     public void testIsInnerPoint() {
         Polygon polygon = new Polygon(1, new Vector3(0, 0), new Vector3(0, 1), new Vector3(1, 0));
         Assert.assertTrue(polygon.isInnerPoint(new Vector3(0.5f,0.5f)));
@@ -56,7 +56,7 @@ public class PolygonTest {
      * {@link Polygon.contains} 1亿次 4227ms
      * </p>
      */
-    @Test
+//    @Test
     public void testContainPerformance() {
     	Polygon rectangle=new Polygon(0, new Vector3(0, 0), new Vector3(1, 0), new Vector3(1, 1),new Vector3(0,1 ));
     	Vector3 point=new Vector3(0.5f,0.5f);
@@ -81,7 +81,7 @@ public class PolygonTest {
      * <br>
      * 1亿次4秒
      */
-    @Test
+//    @Test
     public void testIsOnEdge() {
     	Polygon rectangle=new Polygon(0, new Vector3(0, 0), new Vector3(1, 0), new Vector3(1, 1),new Vector3(0,1 ));
     	
@@ -111,7 +111,7 @@ public class PolygonTest {
      *<br>
      *一亿次 不进行预计算 8.5秒
      */
-    @Test
+//    @Test
     public void testNewPolygon() {
     	for(int i=0;i<100000000;i++) {
 //    		Polygon rectangle=new Polygon(0, new Vector3(0, 0), new Vector3(1, 0), new Vector3(1, 1),new Vector3(0,1 ));
