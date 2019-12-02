@@ -3,6 +3,7 @@ package com.jzy.game.bydr;
 import java.io.File;
 import java.util.Arrays;
 
+import com.jzy.game.engine.util.ProjectNameMapUtil;
 import org.redisson.api.RAtomicLong;
 import org.redisson.api.RFuture;
 import org.redisson.api.RMap;
@@ -19,57 +20,62 @@ import com.jzy.game.engine.script.ScriptManager;
 
 /**
  * 捕鱼达人启动类
- * 
+ *
  * @author JiangZhiYong
  * @QQ 359135103 2017年6月28日 上午11:30:49
  */
 public final class AppBydr {
-	private static final Logger LOGGER = LoggerFactory.getLogger(AppBydr.class);
-	private static String configPath;
-	protected static JedisManager redisManager;
-	private static BydrServer bydrServer;
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppBydr.class);
+    private static String configPath;
+    protected static JedisManager redisManager;
+    private static BydrServer bydrServer;
 
-	private AppBydr() {
-	}
+    private AppBydr() {
+    }
 
-	public static void main(String[] args) {
-		initConfigPath();
-		// redis
-		redisManager = new JedisManager(configPath);
-		redisManager.initScript(configPath);
-		JedisManager.setRedisManager(redisManager);
+    public static void main(String[] args) {
+        initConfigPath();
+        // redis
+        redisManager = new JedisManager(configPath);
+        redisManager.initScript(configPath);
+        JedisManager.setRedisManager(redisManager);
 //		String result = RedisManager.getInstance().executeScript("Test", Arrays.asList("foo"), Arrays.asList("jzy"));
 //		LOGGER.debug("redis 脚本测试:" + result);
 //		RedissonManager.connectRedis(configPath);
 
-		
-		// 创建mongodb连接
-		MongoManager.getInstance().createConnect(configPath);
 
-		// 加载脚本
-		ScriptManager.getInstance().init(str -> System.exit(0));
+        // 创建mongodb连接
+        MongoManager.getInstance().createConnect(configPath);
 
-		// 启动通信连接
-		bydrServer = new BydrServer(configPath);
-		new Thread(bydrServer).start();
-	}
+        // 加载脚本
+        ScriptManager.getInstance().init(str -> System.exit(0));
 
-	private static void initConfigPath() {
-		File file = new File(System.getProperty("user.dir"));
-		if ("target".equals(file.getName())) {
-			configPath = file.getPath() + File.separatorChar + "config";
-		} else {
-			configPath = file.getPath() + File.separatorChar + "target" + File.separatorChar + "config";
-		}
-		LOGGER.info("配置路径为：" + configPath);
-	}
+        // 启动通信连接
+        bydrServer = new BydrServer(configPath);
+        new Thread(bydrServer).start();
+    }
 
-	public static BydrServer getBydrServer() {
-		return bydrServer;
-	}
+    private static void initConfigPath() {
+        File file = new File(System.getProperty("user.dir"));
 
-	public static String getConfigPath() {
-		return configPath;
-	}
+        String name = "game-bydr";
+        ProjectNameMapUtil.setName(name);
+        ScriptManager scriptManager = new ScriptManager();
+
+        if ("target".equals(file.getName())) {
+            configPath = file.getPath() + File.separatorChar + name + "/config";
+        } else {
+            configPath = file.getPath() + File.separatorChar + name + File.separator + "target" + File.separatorChar + "config";
+        }
+        LOGGER.info("配置路径为：" + configPath);
+    }
+
+    public static BydrServer getBydrServer() {
+        return bydrServer;
+    }
+
+    public static String getConfigPath() {
+        return configPath;
+    }
 
 }
